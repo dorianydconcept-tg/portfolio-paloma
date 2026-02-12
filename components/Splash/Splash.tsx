@@ -15,12 +15,18 @@ export default function Splash({ images, onEnter }: SplashProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Rapid-fire cycling — hard cuts, pas de fade
+  // Rapid-fire cycling — hard cuts, ordre aléatoire
   useEffect(() => {
-    if (images.length === 0) return;
+    if (images.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => {
+        let next;
+        do {
+          next = Math.floor(Math.random() * images.length);
+        } while (next === prev);
+        return next;
+      });
     }, CYCLE_SPEED);
 
     return () => clearInterval(interval);
