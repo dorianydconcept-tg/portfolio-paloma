@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import gsap from "gsap";
 import styles from "./Splash.module.css";
 
@@ -9,40 +9,24 @@ interface SplashProps {
   onEnter: () => void;
 }
 
+const CYCLE_SPEED = 350; // ms entre chaque image — coupe rapide style Paul Calver
+
 export default function Splash({ images, onEnter }: SplashProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-cycling diaporama
+  // Rapid-fire cycling — hard cuts, pas de fade
   useEffect(() => {
     if (images.length === 0) return;
 
     const interval = setInterval(() => {
-      if (imageRef.current) {
-        // Fade out
-        gsap.to(imageRef.current, {
-          opacity: 0,
-          duration: 0.5,
-          onComplete: () => {
-            // Change image
-            setCurrentIndex((prev) => (prev + 1) % images.length);
-            // Fade in
-            if (imageRef.current) {
-              gsap.to(imageRef.current, {
-                opacity: 1,
-                duration: 0.5,
-              });
-            }
-          },
-        });
-      }
-    }, 3000);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, CYCLE_SPEED);
 
     return () => clearInterval(interval);
   }, [images.length]);
 
-  const handleEnter = () => {
+  const handleEnter = useCallback(() => {
     if (containerRef.current) {
       gsap.to(containerRef.current, {
         opacity: 0,
@@ -52,14 +36,13 @@ export default function Splash({ images, onEnter }: SplashProps) {
         onComplete: onEnter,
       });
     }
-  };
+  }, [onEnter]);
 
   if (images.length === 0) return null;
 
   return (
-    <div ref={containerRef} className={styles.splash}>
+    <div ref={containerRef} className={styles.splash} onClick={handleEnter}>
       <img
-        ref={imageRef}
         src={images[currentIndex]}
         alt="Portfolio"
         className={styles.image}
