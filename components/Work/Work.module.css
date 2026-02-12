@@ -1,0 +1,58 @@
+.work {
+  position: relative;
+  width: 100%;
+  min-height: 200vh;
+  padding: 2rem;
+}
+
+.item {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.info {
+  margin-top: 0.75rem;
+}
+
+.title {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2c6e49;
+}
+
+.tag {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #4c956c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .work {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .item {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+}

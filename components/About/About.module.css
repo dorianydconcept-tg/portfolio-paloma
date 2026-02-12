@@ -1,0 +1,105 @@
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 3rem;
+  gap: 4rem;
+}
+
+.photoSide {
+  flex: 0 0 40%;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3/4;
+  background: rgba(255, 201, 185, 0.15);
+  border-radius: 4px;
+  transform: rotate(-2deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4c956c;
+  font-family: 'Aileron', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.textSide {
+  flex: 1;
+}
+
+.title {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #2c6e49;
+  margin-bottom: 1.5rem;
+}
+
+.bio {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #2c6e49;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 600;
+  color: #4c956c;
+  background: rgba(255, 201, 185, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+}
+
+.large {
+  font-size: 1.25rem;
+}
+
+.medium {
+  font-size: 1rem;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    padding-bottom: 5rem;
+    gap: 2rem;
+  }
+
+  .photoSide {
+    flex: none;
+    width: 100%;
+  }
+
+  .photoPlaceholder {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    transform: none;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+}

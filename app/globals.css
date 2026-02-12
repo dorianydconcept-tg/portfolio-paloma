@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Aileron";
+  src: url("/fonts/Aileron-Regular.woff2") format("woff2"),
+    url("/fonts/Aileron-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aileron";
+  src: url("/fonts/Aileron-SemiBold.woff2") format("woff2"),
+    url("/fonts/Aileron-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aileron";
+  src: url("/fonts/Aileron-Bold.woff2") format("woff2"),
+    url("/fonts/Aileron-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aileron";
+  src: url("/fonts/Aileron-Light.woff2") format("woff2"),
+    url("/fonts/Aileron-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-peach: #ffc9b9;
+  --color-green-main: #4c956c;
+  --color-green-dark: #2c6e49;
+  --color-white: #ffffff;
+  --font-aileron: "Aileron", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Aileron", sans-serif;
+  background-color: #ffffff;
+  color: #2c6e49;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #ffc9b9;
+  color: #2c6e49;
+}

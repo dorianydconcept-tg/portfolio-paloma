@@ -1,0 +1,59 @@
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  text-align: center;
+}
+
+.headline {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: #4c956c;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.email {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #2c6e49;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.email:hover {
+  color: #ffc9b9;
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.socials a {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #4c956c;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #2c6e49;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 2rem 1.5rem;
+    padding-bottom: 5rem;
+  }
+}

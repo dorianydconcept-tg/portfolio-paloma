@@ -1,0 +1,54 @@
+.tabBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+}
+
+.tabButton {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Aileron', sans-serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #2c6e49;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition: background-color 0.3s ease;
+  padding: 0;
+}
+
+.tabButton:hover {
+  background-color: rgba(76, 149, 108, 0.1);
+}
+
+.tabButton.active {
+  background-color: #4c956c;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .tabBar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .tabButton {
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 0.75rem 0;
+    font-size: 0.65rem;
+  }
+}
