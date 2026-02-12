@@ -10,6 +10,7 @@ import Work from "@/components/Work/Work";
 import About from "@/components/About/About";
 import Contact from "@/components/Contact/Contact";
 import ProjectGallery from "@/components/ProjectGallery/ProjectGallery";
+import Particles from "@/components/Particles/Particles";
 import { projects, Project } from "@/data/projects";
 
 type Phase = "splash" | "hero" | "portfolio";
@@ -78,6 +79,19 @@ export default function Page() {
 
       {phase === "portfolio" && (
         <>
+          <Particles
+            particleCount={150}
+            particleSpread={10}
+            speed={0.05}
+            particleColors={["#ffc9b9", "#4c956c", "#2c6e49"]}
+            moveParticlesOnHover={true}
+            particleHoverFactor={1}
+            alphaParticles={true}
+            particleBaseSize={80}
+            sizeRandomness={1.5}
+            cameraDistance={25}
+          />
+
           <TabBar
             activeTab={activeTab}
             onTabChange={handleTabChange}
