@@ -41,8 +41,8 @@ export default function ProjectGallery({ project, onClose }: ProjectGalleryProps
 
   return (
     <div ref={containerRef} className={styles.gallery}>
-      <button className={styles.close} onClick={onClose}>
-        Retour
+      <button className={styles.close} onClick={onClose} aria-label="Fermer">
+        ×
       </button>
       <div ref={trackRef} className={styles.track}>
         {/* Title slide */}
