@@ -84,7 +84,7 @@ export default function Page() {
             visible={true}
           />
 
-          <main className="ml-[60px] max-md:ml-0">
+          <main className="ml-[80px] max-md:ml-0">
             <div ref={contentRef}>
               {activeTab === "HOME" && (
                 <Home onProjectClick={handleProjectClick} />

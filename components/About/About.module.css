@@ -6,25 +6,18 @@
   gap: 4rem;
 }
 
-.photoSide {
+.videoSide {
   flex: 0 0 40%;
-}
-
-.photoPlaceholder {
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 3/4;
-  background: rgba(255, 201, 185, 0.15);
-  border-radius: 4px;
-  transform: rotate(-2deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4c956c;
-  font-family: 'Aileron', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+}
+
+.avatar {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .textSide {
@@ -84,15 +77,13 @@
     gap: 2rem;
   }
 
-  .photoSide {
+  .videoSide {
     flex: none;
     width: 100%;
   }
 
-  .photoPlaceholder {
-    max-width: 100%;
-    aspect-ratio: 4/3;
-    transform: none;
+  .avatar {
+    max-width: 280px;
   }
 
   .title {

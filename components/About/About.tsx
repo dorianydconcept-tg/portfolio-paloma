@@ -17,10 +17,15 @@ const skills = [
 export default function About() {
   return (
     <div className={styles.about}>
-      <div className={styles.photoSide}>
-        <div className={styles.photoPlaceholder}>
-          <span>Photo</span>
-        </div>
+      <div className={styles.videoSide}>
+        <video
+          className={styles.avatar}
+          src="/videos/avatar-3d.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </div>
 
       <div className={styles.textSide}>

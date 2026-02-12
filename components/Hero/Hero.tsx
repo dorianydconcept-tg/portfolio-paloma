@@ -56,7 +56,7 @@ export default function Hero({ visible, onScrollDown }: HeroProps) {
   return (
     <div ref={heroRef} className={styles.hero}>
       <h1 className={styles.name}>Paloma DELACROIX</h1>
-      <p className={styles.subtitle}>Designer & Développeuse créative</p>
+      <p className={styles.subtitle}>Designer d'espaces</p>
       <div className={styles.scrollIndicator}>
         <span>Scroll</span>
         <div className={styles.line}></div>
