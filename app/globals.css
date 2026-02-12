@@ -62,3 +62,13 @@ body {
   background-color: #ffc9b9;
   color: #2c6e49;
 }
+
+.main-content {
+  margin-left: 80px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
