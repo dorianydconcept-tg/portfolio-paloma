@@ -11,6 +11,7 @@ import About from "@/components/About/About";
 import Contact from "@/components/Contact/Contact";
 import ProjectGallery from "@/components/ProjectGallery/ProjectGallery";
 import Particles from "@/components/Particles/Particles";
+import ClickSpark from "@/components/ClickSpark/ClickSpark";
 import { projects, Project } from "@/data/projects";
 
 type Phase = "splash" | "hero" | "portfolio";
@@ -78,7 +79,7 @@ export default function Page() {
       )}
 
       {phase === "portfolio" && (
-        <>
+        <ClickSpark sparkColor="#4c956c" sparkSize={12} sparkRadius={20} sparkCount={10} duration={500}>
           <Particles
             particleCount={150}
             particleSpread={10}
@@ -117,7 +118,7 @@ export default function Page() {
               onClose={handleCloseProject}
             />
           )}
-        </>
+        </ClickSpark>
       )}
     </>
   );
