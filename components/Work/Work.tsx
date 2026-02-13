@@ -83,7 +83,7 @@ export default function Work({ onProjectClick }: WorkProps) {
         gsap.to(item, {
           scale: 1.05,
           zIndex: 10,
-          boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
           duration: 0.3,
         });
         itemsRef.current.forEach((other) => {

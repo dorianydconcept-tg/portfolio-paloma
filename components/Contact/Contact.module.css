@@ -6,28 +6,55 @@
   justify-content: center;
   padding: 4rem 3rem;
   text-align: center;
+  position: relative;
+}
+
+/* Architectural cross — vertical line */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 60%;
+  background: rgba(245, 240, 235, 0.06);
+  pointer-events: none;
+}
+
+/* Architectural cross — horizontal line */
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 1px;
+  background: rgba(245, 240, 235, 0.06);
+  pointer-events: none;
 }
 
 .headline {
-  font-family: 'Aileron', sans-serif;
+  font-family: var(--font-body), "Syne", sans-serif;
   font-weight: 400;
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  color: #4c956c;
+  color: rgba(245, 240, 235, 0.6);
   margin-bottom: 2rem;
   line-height: 1.5;
 }
 
 .email {
-  font-family: 'Aileron', sans-serif;
-  font-weight: 700;
+  font-family: var(--font-display), "Instrument Serif", serif;
+  font-weight: 400;
   font-size: clamp(1.5rem, 4vw, 3rem);
-  color: #2c6e49;
+  color: #f5f0eb;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .email:hover {
-  color: #ffc9b9;
+  color: #c4712f;
 }
 
 .socials {
@@ -37,10 +64,10 @@
 }
 
 .socials a {
-  font-family: 'Aileron', sans-serif;
+  font-family: var(--font-body), "Syne", sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
-  color: #4c956c;
+  color: rgba(245, 240, 235, 0.5);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -48,7 +75,7 @@
 }
 
 .socials a:hover {
-  color: #2c6e49;
+  color: #c4712f;
 }
 
 @media (max-width: 768px) {

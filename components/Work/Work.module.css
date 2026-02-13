@@ -15,7 +15,8 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 4px;
+  border-radius: 0;
+  border: 1px solid #333;
 }
 
 .info {
@@ -23,17 +24,17 @@
 }
 
 .title {
-  font-family: 'Aileron', sans-serif;
-  font-weight: 700;
+  font-family: var(--font-display), "Instrument Serif", serif;
+  font-weight: 400;
   font-size: 1.1rem;
-  color: #2c6e49;
+  color: #f5f0eb;
 }
 
 .tag {
-  font-family: 'Aileron', sans-serif;
+  font-family: var(--font-body), "Syne", sans-serif;
   font-weight: 500;
   font-size: 0.75rem;
-  color: #4c956c;
+  color: rgba(196, 113, 47, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
