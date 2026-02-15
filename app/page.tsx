@@ -102,7 +102,7 @@ export default function Page() {
           <main className="main-content">
             <div ref={contentRef}>
               {activeTab === "HOME" && (
-                <Home onProjectClick={handleProjectClick} />
+                <Home />
               )}
               {activeTab === "WORK" && (
                 <Work onProjectClick={handleProjectClick} />
