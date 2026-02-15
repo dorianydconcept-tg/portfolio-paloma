@@ -79,12 +79,12 @@ export default function Page() {
       )}
 
       {phase === "portfolio" && (
-        <ClickSpark sparkColor="#c4712f" sparkSize={12} sparkRadius={20} sparkCount={10} duration={500}>
+        <ClickSpark sparkColor="#4c956c" sparkSize={12} sparkRadius={20} sparkCount={10} duration={500}>
           <Particles
             particleCount={150}
             particleSpread={10}
             speed={0.05}
-            particleColors={["#c4712f", "#f5f0eb", "#333333"]}
+            particleColors={["#ffc9b9", "#4c956c", "#2c6e49"]}
             moveParticlesOnHover={true}
             particleHoverFactor={1}
             alphaParticles={true}
