@@ -20,7 +20,7 @@ export default function About() {
       <div className={styles.videoSide}>
         <video
           className={styles.avatar}
-          src="/videos/avatar-3d.mp4"
+          src="/videos/paloma-avatar.mp4"
           autoPlay
           loop
           muted
@@ -31,10 +31,7 @@ export default function About() {
       <div className={styles.textSide}>
         <h2 className={styles.title}>À propos</h2>
         <p className={styles.bio}>
-          Designer et développeuse créative basée à Toulouse,
-          je crée des expériences digitales qui allient esthétique
-          et technique. Mon approche hybride me permet de maîtriser
-          un projet de la conception à la mise en ligne.
+          Designer d&apos;espace &amp; d&apos;exp&eacute;rience, je con&ccedil;ois des environnements o&ugrave; l&apos;esth&eacute;tique rencontre l&apos;usage. Mon approche hybride, au croisement de l&apos;architecture int&eacute;rieure, du marchandisage visuel et de l&apos;UX Design, me permet de cr&eacute;er des lieux centr&eacute;s sur l&apos;utilisateur. De la ma&icirc;trise technique sur Revit et AutoCAD au suivi de chantier, j&apos;accompagne les projets de la conception &agrave; la r&eacute;alisation.
         </p>
 
         <div className={styles.skills}>

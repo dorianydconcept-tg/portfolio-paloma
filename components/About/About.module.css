@@ -22,6 +22,7 @@
 
 .textSide {
   flex: 1;
+  max-width: fit-content;
 }
 
 .title {
@@ -38,7 +39,6 @@
   font-size: 1.125rem;
   color: #2c6e49;
   line-height: 1.7;
-  max-width: 500px;
   margin-bottom: 2.5rem;
 }
 
