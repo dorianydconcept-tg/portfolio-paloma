@@ -31,11 +31,11 @@ export default function Hero({ visible, onScrollDown }: HeroProps) {
     }
   }, [visible]);
 
-  // Handle scroll event
+  // Handle scroll event (wheel + touch)
   useEffect(() => {
     if (!visible || hasScrolled) return;
 
-    const handleWheel = () => {
+    const triggerScroll = () => {
       if (heroRef.current && !hasScrolled) {
         setHasScrolled(true);
         gsap.to(heroRef.current, {
@@ -47,8 +47,27 @@ export default function Hero({ visible, onScrollDown }: HeroProps) {
       }
     };
 
+    // Desktop: wheel event
+    const handleWheel = () => triggerScroll();
+
+    // Mobile: touch swipe up
+    let touchStartY = 0;
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+    const handleTouchEnd = (e: TouchEvent) => {
+      const deltaY = touchStartY - e.changedTouches[0].clientY;
+      if (deltaY > 30) triggerScroll();
+    };
+
     window.addEventListener("wheel", handleWheel);
-    return () => window.removeEventListener("wheel", handleWheel);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
   }, [visible, hasScrolled, onScrollDown]);
 
   if (!visible) return null;
