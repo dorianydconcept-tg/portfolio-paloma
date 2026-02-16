@@ -36,3 +36,11 @@
 .enter:hover {
   border-color: white;
 }
+
+@media (max-width: 768px) {
+  .enter {
+    font-size: 0.875rem;
+    padding: 0.6rem 1.5rem;
+    bottom: 8%;
+  }
+}

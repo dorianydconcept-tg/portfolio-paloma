@@ -43,8 +43,10 @@ export default function Work({ onProjectClick }: WorkProps) {
     );
   }, []);
 
-  // Parallax on mouse movement
+  // Parallax on mouse movement (desktop only)
   useEffect(() => {
+    if (window.innerWidth <= 768) return;
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -72,8 +74,10 @@ export default function Work({ onProjectClick }: WorkProps) {
     return () => container.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Hover effects
+  // Hover effects (desktop only)
   useEffect(() => {
+    if (window.innerWidth <= 768) return;
+
     const cleanups: (() => void)[] = [];
 
     itemsRef.current.forEach((item) => {

@@ -137,12 +137,17 @@
   .close {
     top: 1rem;
     right: 1rem;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 1.5rem;
   }
 
   .descSlide {
     max-width: 100%;
+  }
+
+  .behanceLink {
+    padding: 0.45rem 1.25rem;
+    font-size: 0.8rem;
   }
 }

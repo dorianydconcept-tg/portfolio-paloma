@@ -56,4 +56,15 @@
     padding: 2rem 1.5rem;
     padding-bottom: 5rem;
   }
+
+  .email {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    word-break: break-all;
+  }
+
+  .socials {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

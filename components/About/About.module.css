@@ -87,4 +87,13 @@
   .bio {
     font-size: 1rem;
   }
+
+  .skills {
+    gap: 0.75rem;
+  }
+
+  .skill {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.9rem;
+  }
 }

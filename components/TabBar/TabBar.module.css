@@ -40,7 +40,7 @@
     top: auto;
     bottom: 0;
     left: 0;
-    height: auto;
+    height: 60px;
     width: 100%;
     flex-direction: row;
   }
@@ -48,7 +48,10 @@
   .tabButton {
     writing-mode: horizontal-tb;
     transform: none;
-    padding: 0.75rem 0;
+    padding: 0;
     font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
