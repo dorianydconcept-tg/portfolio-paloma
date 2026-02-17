@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Paloma DELACROIX - Recap Projet</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+  :root {
+    --color-primary: #4c956c;
+    --color-primary-light: #6aab85;
+    --color-accent: #ffc9b9;
+    --color-bg: #faf9f6;
+    --color-bg-alt: #f2f0ec;
+    --color-text: #2c6e49;
+    --color-text-muted: #6b8f7a;
+    --color-border: #d4e2da;
+    --color-heading: #2c6e49;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    padding: 40px 50px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-heading);
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+  }
+
+  h1 + blockquote {
+    color: var(--color-text-muted);
+    font-size: 10px;
+    font-style: italic;
+    border-left: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-top: 30px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--color-border);
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 16px;
+    margin-bottom: 8px;
+    page-break-after: avoid;
+  }
+
+  p, li { margin-bottom: 4px; }
+
+  ul { padding-left: 20px; list-style-type: disc; }
+  ul ul { margin-top: 2px; }
+
+  strong { font-weight: 600; }
+
+  code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    background: var(--color-bg-alt);
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border);
+  }
+
+  pre {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 9.5px;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin: 8px 0 12px;
+    page-break-inside: avoid;
+  }
+
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 16px;
+    font-size: 10px;
+    page-break-inside: auto;
+  }
+
+  thead {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  th {
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 10px;
+  }
+
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  tr:nth-child(even) { background: var(--color-bg-alt); }
+
+  blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 12px;
+    color: var(--color-text-muted);
+    margin: 8px 0;
+  }
+
+  /* ========== BRAND BOARD ========== */
+
+  .brand-board {
+    page-break-before: always;
+    padding: 30px 0;
+  }
+
+  .brand-board h2 {
+    text-align: center;
+    font-size: 22px;
+    border-bottom: none;
+    margin-bottom: 30px;
+  }
+
+  .color-palette {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 30px;
+    flex-wrap: wrap;
+  }
+
+  .color-card {
+    flex: 1;
+    min-width: 80px;
+    max-width: 160px;
+    text-align: center;
+  }
+
+  .color-card .swatch {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .color-card .color-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 10px;
+    color: var(--color-text);
+    margin-bottom: 2px;
+  }
+
+  .color-card .color-hex {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    color: var(--color-text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  .color-card .color-usage {
+    font-size: 9px;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .typo-specimen {
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    padding: 24px 30px;
+    margin: 20px 0;
+    border: 1px solid var(--color-border);
+  }
+
+  .typo-specimen .font-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-text);
+  }
+
+  .typo-specimen .font-weights {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .typo-specimen .weight-col {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .typo-specimen .weight-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+
+  .typo-specimen .weight-sample {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  .typo-specimen .weight-sample.bold { font-weight: 700; }
+  .typo-specimen .weight-sample.semibold { font-weight: 600; }
+  .typo-specimen .weight-sample.regular { font-weight: 400; }
+  .typo-specimen .weight-sample.light { font-weight: 300; }
+
+  .utility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+  .utility-chip {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 10px;
+  }
+
+  .utility-chip code {
+    font-weight: 600;
+    color: var(--color-primary);
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  .utility-chip .util-desc {
+    display: block;
+    font-size: 9px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+
+  .color-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-right: 4px;
+    border: 1px solid var(--color-border);
+  }
+
+  h2 { page-break-before: auto; }
+
+  @media print {
+    body { padding: 0; }
+    h2 { page-break-before: auto; }
+    .brand-board { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Portfolio Paloma DELACROIX - Recap Projet</h1>
+<blockquote>Genere le 17/02/2026 a 23:30 par <code>/recap</code></blockquote>
+
+<h2>Stack &amp; Architecture</h2>
+<ul>
+  <li><strong>Framework</strong>: Next.js 16.1.6</li>
+  <li><strong>Langage</strong>: TypeScript 5</li>
+  <li><strong>Runtime</strong>: React 19.2.3</li>
+  <li><strong>Deploiement</strong>: Vercel (auto-deploy sur push main)</li>
+  <li><strong>Package Manager</strong>: npm</li>
+  <li><strong>Animations</strong>: GSAP 3.14 + Framer Motion 12.34</li>
+  <li><strong>WebGL</strong>: OGL 1.0</li>
+  <li><strong>Styles</strong>: CSS Modules + Tailwind CSS v4</li>
+</ul>
+
+<h2>Structure du Projet</h2>
+
+<h3>Diagramme d'Architecture</h3>
+
+<pre class="mermaid">
+graph TD
+    subgraph Client["Navigateur Client"]
+        SPA["Application SPA"]
+        CANVAS["Canvas 2D - ClickSpark"]
+        WEBGL["WebGL / OGL - Particules"]
+    end
+
+    subgraph NextJS["Next.js 16 — App Router"]
+        LAYOUT["Layout racine - glassmorphism"]
+        PAGE["Page principale - gestion des phases"]
+
+        subgraph Phases["Phases de navigation"]
+            SPLASH["Splash - diaporama rapide"]
+            HERO["Hero - titre + scroll"]
+            PORTFOLIO["Portfolio - contenu principal"]
+        end
+
+        subgraph Sections["Sections Portfolio"]
+            HOME["Home - presentation"]
+            WORK["Work - grille projets"]
+            ABOUT["About - bio + skills"]
+            CONTACT["Contact - email + socials"]
+        end
+
+        subgraph UI["Composants UI"]
+            TABBAR["TabBar - navigation onglets"]
+            GALLERY["ProjectGallery - scroll horizontal"]
+            VIDEO["VideoPlayer - avatar video"]
+        end
+    end
+
+    subgraph Animations["Librairies d'animation"]
+        GSAP["GSAP + ScrollTrigger"]
+        FRAMER["Framer Motion"]
+    end
+
+    subgraph Data["Donnees"]
+        PROJECTS["data/projects.ts"]
+        SCRAPER["scrape-behance.mjs"]
+    end
+
+    subgraph Externe["Services externes"]
+        BEHANCE["Behance CDN - images"]
+        VERCEL["Vercel - hebergement"]
+        SOCIALS["Reseaux sociaux"]
+    end
+
+    PAGE -->|"phase splash"| SPLASH
+    PAGE -->|"phase hero"| HERO
+    PAGE -->|"phase portfolio"| PORTFOLIO
+
+    PORTFOLIO --> TABBAR
+    TABBAR -->|"onglet actif"| HOME
+    TABBAR -->|"onglet actif"| WORK
+    TABBAR -->|"onglet actif"| ABOUT
+    TABBAR -->|"onglet actif"| CONTACT
+
+    WORK -->|"clic projet"| GALLERY
+    HOME --> VIDEO
+    ABOUT --> VIDEO
+
+    SPLASH -->|"images CDN"| BEHANCE
+    GALLERY -->|"images CDN"| BEHANCE
+    WORK -->|"thumbnails"| BEHANCE
+    SCRAPER -->|"scraping"| BEHANCE
+    CONTACT -->|"liens"| SOCIALS
+
+    GSAP -->|"anime"| SPLASH
+    GSAP -->|"anime"| HERO
+    GSAP -->|"anime"| WORK
+    GSAP -->|"anime"| GALLERY
+    WEBGL -->|"rendu"| SPA
+    CANVAS -->|"rendu"| SPA
+
+    NextJS -->|"deploy auto"| VERCEL
+</pre>
+
+<h3>Arborescence</h3>
+
+<pre><code>Portfolio/
+├── app/                          # Pages et configuration Next.js (App Router)
+│   ├── layout.tsx                #   Layout racine (HTML, glassmorphism blobs)
+│   ├── page.tsx                  #   Page unique SPA (phases : splash → hero → portfolio)
+│   ├── globals.css               #   Styles globaux, polices Aileron, theme Tailwind
+│   └── favicon.ico               #   Icone du site
+│
+├── components/                   # Composants React (un dossier par composant)
+│   ├── Splash/                   #   Ecran d'accueil — diaporama coupes rapides
+│   ├── Hero/                     #   Ecran titre avec scroll/swipe pour entrer
+│   ├── Home/                     #   Section accueil — texte + avatar video
+│   ├── Work/                     #   Grille projets — disposition desordonnee GSAP
+│   ├── About/                    #   Section a propos — bio, skills, avatar video
+│   ├── Contact/                  #   Section contact — email + reseaux sociaux
+│   ├── TabBar/                   #   Navigation onglets (HOME/WORK/ABOUT/CONTACT)
+│   ├── ProjectGallery/           #   Galerie horizontale plein ecran (ScrollTrigger)
+│   ├── VideoPlayer/              #   Lecteur video avec fallback bouton play
+│   ├── Particles/                #   Fond anime de particules WebGL (OGL)
+│   └── ClickSpark/               #   Effet d'etincelles vertes au clic (Canvas 2D)
+│
+├── data/                         # Donnees statiques
+│   ├── projects.ts               #   Liste des 9 projets (images Behance, metadonnees)
+│   └── behance-scraped.json      #   Donnees brutes scrapees depuis Behance
+│
+├── public/                       # Fichiers statiques
+│   ├── fonts/                    #   Polices Aileron (woff/woff2 : 4 graisses)
+│   └── videos/                   #   Video avatar (paloma-avatar.mp4)
+│
+├── scripts/                      # Scripts utilitaires
+│   └── scrape-behance.mjs        #   Scraper Behance via Playwright
+│
+├── package.json                  # Dependances du projet
+├── next.config.ts                # Configuration Next.js (minimale)
+├── tsconfig.json                 # Configuration TypeScript
+├── postcss.config.mjs            # Configuration PostCSS (Tailwind)
+└── CLAUDE.md                     # Instructions projet pour Claude Code</code></pre>
+
+<h2>Pages &amp; Routes</h2>
+
+<table>
+  <thead><tr><th>Route</th><th>Fichier</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td><code>/</code></td><td><code>app/page.tsx</code></td><td>Page unique SPA avec splash, hero et portfolio</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Layout</strong> : <code>app/layout.tsx</code> — Layout racine definissant les metadonnees (titre "Paloma DELACROIX — Portfolio"), la langue FR, et les blobs glassmorphism en arriere-plan.</p>
+
+<p><strong>Note</strong> : Ce projet est une Single Page Application. La navigation interne se fait entierement cote client via un systeme de phases (<code>splash</code> → <code>hero</code> → <code>portfolio</code>) et d'onglets (HOME, WORK, ABOUT, CONTACT).</p>
+
+<h2>Composants</h2>
+
+<h3>Intro / Ecran d'accueil</h3>
+<ul>
+  <li><code>Splash</code> — Diaporama coupes rapides (style Paul Calver) des images projets avec bouton "Entrer"</li>
+  <li><code>Hero</code> — Ecran titre "Paloma DELACROIX - Designer d'espaces" avec detection scroll/swipe</li>
+</ul>
+
+<h3>Navigation</h3>
+<ul>
+  <li><code>TabBar</code> — Barre de navigation laterale avec 4 onglets (verticale desktop, horizontale mobile)</li>
+</ul>
+
+<h3>Sections de contenu</h3>
+<ul>
+  <li><code>Home</code> — Presentation avec texte d'accroche, liens sociaux et avatar video</li>
+  <li><code>Work</code> — Grille de projets en disposition desordonnee avec parallaxe GSAP au survol</li>
+  <li><code>About</code> — Biographie, video avatar et badges de competences (9 skills)</li>
+  <li><code>Contact</code> — Headline d'accroche, email et liens reseaux sociaux</li>
+</ul>
+
+<h3>Affichage specialise</h3>
+<ul>
+  <li><code>ProjectGallery</code> — Galerie plein ecran avec scroll horizontal (GSAP ScrollTrigger), slide titre, images et description</li>
+  <li><code>VideoPlayer</code> — Lecteur video autoplay silencieux avec bouton play de fallback</li>
+</ul>
+
+<h3>Effets visuels</h3>
+<ul>
+  <li><code>Particles</code> — Fond anime de particules WebGL via OGL avec shaders GLSL custom</li>
+  <li><code>ClickSpark</code> — Effet d'etincelles vertes au clic via Canvas 2D</li>
+</ul>
+
+<h2>Logique Metier</h2>
+
+<table>
+  <thead><tr><th>Fichier</th><th>Role</th><th>Responsabilites</th></tr></thead>
+  <tbody>
+    <tr><td><code>data/projects.ts</code></td><td>Donnees projets</td><td>Interface <code>Project</code>, tableau de 9 projets Behance, <code>featuredProjectIds</code></td></tr>
+    <tr><td><code>scripts/scrape-behance.mjs</code></td><td>Scraper</td><td>Extraction automatique des projets Behance via Playwright</td></tr>
+  </tbody>
+</table>
+
+<h2>State Management</h2>
+
+<ul>
+  <li>State local React via <code>useState</code> dans <code>app/page.tsx</code></li>
+  <li>Phase active (<code>splash</code> / <code>hero</code> / <code>portfolio</code>)</li>
+  <li>Onglet actif (<code>HOME</code> / <code>WORK</code> / <code>ABOUT</code> / <code>CONTACT</code>)</li>
+  <li>Projet selectionne pour la galerie (<code>Project | null</code>)</li>
+  <li>Animations de transition gerees par GSAP (fade in/out entre onglets)</li>
+</ul>
+
+<!-- BRAND BOARD -->
+<div class="brand-board">
+  <h2>Charte Graphique</h2>
+
+  <h3>Palette de couleurs</h3>
+  <div class="color-palette">
+    <div class="color-card">
+      <div class="swatch" style="background: #ffc9b9;"></div>
+      <div class="color-name">Peach</div>
+      <div class="color-hex">#ffc9b9</div>
+      <div class="color-usage">Accent chaud, prenom Hero, hover email, blobs</div>
+    </div>
+    <div class="color-card">
+      <div class="swatch" style="background: #4c956c;"></div>
+      <div class="color-name">Green Main</div>
+      <div class="color-hex">#4c956c</div>
+      <div class="color-usage">Vert principal, liens, sous-titres, TabBar active</div>
+    </div>
+    <div class="color-card">
+      <div class="swatch" style="background: #2c6e49;"></div>
+      <div class="color-name">Green Dark</div>
+      <div class="color-hex">#2c6e49</div>
+      <div class="color-usage">Texte principal, titres, headlines, bordures</div>
+    </div>
+    <div class="color-card">
+      <div class="swatch" style="background: #faf9f6;"></div>
+      <div class="color-name">Off-White</div>
+      <div class="color-hex">#faf9f6</div>
+      <div class="color-usage">Fond du body (ton chaud subtil)</div>
+    </div>
+    <div class="color-card">
+      <div class="swatch" style="background: #ffffff;"></div>
+      <div class="color-name">White</div>
+      <div class="color-hex">#ffffff</div>
+      <div class="color-usage">Fond galerie, texte sur boutons actifs</div>
+    </div>
+    <div class="color-card">
+      <div class="swatch" style="background: #000000;"></div>
+      <div class="color-name">Noir</div>
+      <div class="color-hex">#000000</div>
+      <div class="color-usage">Fond du Splash screen uniquement</div>
+    </div>
+  </div>
+
+  <h3>Typographie</h3>
+  <div class="typo-specimen" style="font-family: 'Inter', sans-serif;">
+    <div class="font-name">Aileron</div>
+    <div class="font-weights">
+      <div class="weight-col">
+        <div class="weight-label">Bold (700)</div>
+        <div class="weight-sample bold">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>0123456789</div>
+      </div>
+      <div class="weight-col">
+        <div class="weight-label">SemiBold (600)</div>
+        <div class="weight-sample semibold">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>0123456789</div>
+      </div>
+      <div class="weight-col">
+        <div class="weight-label">Regular (400)</div>
+        <div class="weight-sample regular">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>0123456789</div>
+      </div>
+      <div class="weight-col">
+        <div class="weight-label">Light (300)</div>
+        <div class="weight-sample light">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz<br>0123456789</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Variables CSS (Tailwind v4 @theme inline)</h3>
+  <pre><code>--color-peach: #ffc9b9;
+--color-green-main: #4c956c;
+--color-green-dark: #2c6e49;
+--color-white: #ffffff;
+--font-aileron: "Aileron", sans-serif;</code></pre>
+
+  <h3>Classes utilitaires globales</h3>
+  <div class="utility-grid">
+    <div class="utility-chip">
+      <code>.glass-blobs</code>
+      <span class="util-desc">Conteneur fixe plein ecran pour les blobs decoratifs (blur 80px)</span>
+    </div>
+    <div class="utility-chip">
+      <code>.blob-1 / .blob-2 / .blob-3</code>
+      <span class="util-desc">Formes circulaires flottantes animees (peach/green)</span>
+    </div>
+    <div class="utility-chip">
+      <code>.main-content</code>
+      <span class="util-desc">Decalage pour la TabBar laterale (80px desktop, 0 mobile)</span>
+    </div>
+    <div class="utility-chip">
+      <code>::selection</code>
+      <span class="util-desc">Selection texte : fond peach, texte green dark</span>
+    </div>
+    <div class="utility-chip">
+      <code>@keyframes glass-float</code>
+      <span class="util-desc">Animation flottante 12s des blobs</span>
+    </div>
+  </div>
+
+  <h3>Breakpoint</h3>
+  <ul>
+    <li><strong>768px</strong> — Unique breakpoint mobile (TabBar en bas, colonnes, padding reduit)</li>
+  </ul>
+
+  <h3>Echelle z-index</h3>
+  <table>
+    <thead><tr><th>z-index</th><th>Element</th></tr></thead>
+    <tbody>
+      <tr><td>100</td><td>Splash screen</td></tr>
+      <tr><td>90</td><td>Hero</td></tr>
+      <tr><td>81</td><td>Bouton close galerie</td></tr>
+      <tr><td>80</td><td>ProjectGallery</td></tr>
+      <tr><td>50</td><td>TabBar</td></tr>
+      <tr><td>0</td><td>Glass blobs</td></tr>
+    </tbody>
+  </table>
+</div>
+<!-- END BRAND BOARD -->
+
+<h2>Configuration &amp; Deploiement</h2>
+
+<h3>Scripts disponibles</h3>
+<table>
+  <thead><tr><th>Commande</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td><code>npm run dev</code></td><td>Serveur de developpement Next.js</td></tr>
+    <tr><td><code>npm run build</code></td><td>Compilation pour la production</td></tr>
+    <tr><td><code>npm run start</code></td><td>Serveur de production</td></tr>
+    <tr><td><code>npm run lint</code></td><td>Linting ESLint</td></tr>
+  </tbody>
+</table>
+
+<h3>CI/CD</h3>
+<ul>
+  <li>Deploiement automatique via <strong>Vercel</strong> sur chaque push <code>main</code></li>
+  <li>Pas de pipeline CI/CD explicite (pas de GitHub Actions, Docker, etc.)</li>
+</ul>
+
+<h2>Dependances Cles</h2>
+
+<h3>Production</h3>
+<table>
+  <thead><tr><th>Package</th><th>Version</th><th>Role</th></tr></thead>
+  <tbody>
+    <tr><td><code>next</code></td><td>16.1.6</td><td>Framework</td></tr>
+    <tr><td><code>react</code></td><td>19.2.3</td><td>UI</td></tr>
+    <tr><td><code>react-dom</code></td><td>19.2.3</td><td>Rendu DOM</td></tr>
+    <tr><td><code>gsap</code></td><td>^3.14.2</td><td>Animation</td></tr>
+    <tr><td><code>@gsap/react</code></td><td>^2.1.2</td><td>Integration GSAP/React</td></tr>
+    <tr><td><code>framer-motion</code></td><td>^12.34.0</td><td>Animation declarative</td></tr>
+    <tr><td><code>ogl</code></td><td>^1.0.11</td><td>WebGL (particules)</td></tr>
+  </tbody>
+</table>
+
+<h3>Developpement</h3>
+<table>
+  <thead><tr><th>Package</th><th>Version</th><th>Role</th></tr></thead>
+  <tbody>
+    <tr><td><code>tailwindcss</code></td><td>^4</td><td>Styles utilitaires</td></tr>
+    <tr><td><code>@tailwindcss/postcss</code></td><td>^4</td><td>Plugin PostCSS</td></tr>
+    <tr><td><code>typescript</code></td><td>^5</td><td>Typage statique</td></tr>
+    <tr><td><code>eslint</code></td><td>^9</td><td>Linting</td></tr>
+    <tr><td><code>eslint-config-next</code></td><td>16.1.6</td><td>Regles ESLint Next.js</td></tr>
+    <tr><td><code>@types/node</code></td><td>^20</td><td>Types Node.js</td></tr>
+    <tr><td><code>@types/react</code></td><td>^19</td><td>Types React</td></tr>
+    <tr><td><code>@types/react-dom</code></td><td>^19</td><td>Types React DOM</td></tr>
+  </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#4c956c',
+      primaryTextColor: '#ffffff',
+      primaryBorderColor: '#d4e2da',
+      lineColor: '#6b8f7a',
+      secondaryColor: '#f2f0ec',
+      tertiaryColor: '#faf9f6',
+      fontSize: '12px'
+    }
+  });
+</script>
+</body>
+</html>
