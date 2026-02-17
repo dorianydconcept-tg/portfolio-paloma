@@ -27,12 +27,24 @@
   font-size: clamp(2rem, 5vw, 4rem);
   color: #2c6e49;
   line-height: 1.1;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .headline em {
   color: #ffc9b9;
   font-style: normal;
+}
+
+.subtitle {
+  font-family: 'Aileron', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: #2c6e49;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+  opacity: 0.8;
+  text-align: justify;
 }
 
 .avatar {

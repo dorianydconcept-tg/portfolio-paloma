@@ -31,7 +31,9 @@ export default function About() {
       <div className={styles.textSide}>
         <h2 className={styles.title}>À propos</h2>
         <p className={styles.bio}>
-          Designer d&apos;espace &amp; d&apos;exp&eacute;rience, je con&ccedil;ois des environnements o&ugrave; l&apos;esth&eacute;tique rencontre l&apos;usage. Mon approche hybride, au croisement de l&apos;architecture int&eacute;rieure, du marchandisage visuel et de l&apos;UX Design, me permet de cr&eacute;er des lieux centr&eacute;s sur l&apos;utilisateur. De la ma&icirc;trise technique sur Revit et AutoCAD au suivi de chantier, j&apos;accompagne les projets de la conception &agrave; la r&eacute;alisation.
+          Mon approche fusionne la rigueur technique de l&apos;architecture int&eacute;rieure avec la vision strat&eacute;gique du design UX. Issue du marchandisage visuel, je con&ccedil;ois des espaces fluides et esth&eacute;tiques o&ugrave; le parcours utilisateur est au c&oelig;ur de la r&eacute;flexion.
+          <br /><br />
+          De la mod&eacute;lisation technique &agrave; la d&eacute;coration, je transforme les concepts en environnements r&eacute;els, coh&eacute;rents et porteurs de sens.
         </p>
 
         <div className={styles.skills}>

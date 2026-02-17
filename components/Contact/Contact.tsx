@@ -11,7 +11,7 @@ export default function Contact() {
       </a>
       <div className={styles.socials}>
         <a href="https://www.behance.net/palomanuel" target="_blank" rel="noopener noreferrer">Behance</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/paloma-delacroix/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://www.instagram.com/paloma_nuel/?hl=fr" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
