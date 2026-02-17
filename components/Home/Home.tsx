@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./Home.module.css";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 
 export default function Home() {
   return (
@@ -25,14 +26,7 @@ export default function Home() {
       </div>
 
       <div className={styles.videoSide}>
-        <video
-          className={styles.avatar}
-          src="/videos/paloma-avatar.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        <VideoPlayer src="/videos/paloma-avatar.mp4" className={styles.avatar} />
       </div>
     </div>
   );

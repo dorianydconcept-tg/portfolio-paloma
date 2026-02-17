@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./About.module.css";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 
 const skills = [
   { name: "Architecture d'intérieur", size: "large" },
@@ -18,14 +19,7 @@ export default function About() {
   return (
     <div className={styles.about}>
       <div className={styles.videoSide}>
-        <video
-          className={styles.avatar}
-          src="/videos/paloma-avatar.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        <VideoPlayer src="/videos/paloma-avatar.mp4" className={styles.avatar} />
       </div>
 
       <div className={styles.textSide}>

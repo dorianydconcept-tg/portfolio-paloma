@@ -53,9 +53,63 @@
 html,
 body {
   font-family: "Aileron", sans-serif;
-  background-color: #ffffff;
+  background-color: #faf9f6;
   color: #2c6e49;
   overflow-x: hidden;
+}
+
+.glass-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  animation: glass-float 12s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 201, 185, 0.45);
+  top: -10%;
+  right: -5%;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  width: 350px;
+  height: 350px;
+  background: rgba(76, 149, 108, 0.2);
+  bottom: -10%;
+  left: -5%;
+  animation-delay: -4s;
+}
+
+.blob-3 {
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 201, 185, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -8s;
+}
+
+@keyframes glass-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
 }
 
 ::selection {
